@@ -3,11 +3,13 @@
 """ 
 @author:tom_tao626 
 @license: Apache Licence 
-@file: __init__.py.py 
+@file: init_table.py 
 @time: 2020/12/11
 @contact: tp320670258@gmail.com
 @site: xxxx.suizhu.net
 @software: PyCharm 
 """
 
-# 对于关联关系，它自动帮你生成外键，以及关联表。如果你没指定主键字段，它会生成一个默认的自增主键字段。
+from db.db_conf import pony_db
+# 生成mapping并建表
+pony_db.generate_mapping(create_tables=True)
