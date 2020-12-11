@@ -19,7 +19,6 @@ from models.Category import Category
 @db_session
 def create_post(title, content):
     Post(title=title, content=content)
-    commit()
 
 
 title = "测试标题"
@@ -43,7 +42,6 @@ def update_post(content):
     # get方法先获取一条
     post_one = Post.get(post_pk=1)
     post_one.content = content
-    commit()
 
 
 content = "内容暂无"
@@ -56,7 +54,6 @@ with db_session:
     p = Post.get(post_pk=1)
     Comment(content="你瞅啥", post=p)
     Comment(content="瞅你咋地", post=p)
-    commit()
 
     # 查看关联的数据
     print(p.comments)
@@ -67,11 +64,9 @@ with db_session:
 with db_session:
     c1 = Category(name="tech")
     c2 = Category(name="blog")
-    commit()
 
     Post(title="第5篇文章", content="Hello world too", categories=[c1])
     Post(title="第6篇文章", content="Hello world 3", categories=[c1, c2])
-    commit()
 
     # 查看关联的数据
     print(Category["tech"].posts)  # 这个Category["tech"]等同于Category.get("tech")
@@ -84,7 +79,6 @@ with db_session:
 
 with db_session:
     Category["tech"].delete()
-    commit()
 
 
 # 查询PonyORM的查询方式比较魔性，和别的ORM有较大区别，这里给个简单的例子看看样子。
