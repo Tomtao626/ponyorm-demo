@@ -10,8 +10,6 @@
 @software: PyCharm 
 """
 from pony.orm import db_session, commit, select
-
-from db.db_conf import pony_db
 from models.Post import Post
 from models.Comment import Comment
 from models.Category import Category

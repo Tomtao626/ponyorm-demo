@@ -9,10 +9,8 @@
 @site: xxxx.suizhu.net
 @software: PyCharm 
 """
-from pony import *
+
 from pony import orm
-from datetime import datetime
-from pony.orm import PrimaryKey, Required, Optional, LongStr, Set
 
 # 创建数据库对象
 pony_db = orm.Database()
