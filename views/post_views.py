@@ -34,6 +34,8 @@ create_post(title, content)
     数据库会话缓存将被清除
     自动数据库连接将返回到池中
 """
+# 除了省却commit步骤以外，db_session还能帮你在Exception时，自动回滚。
+# 想更Pythonic一点的话，可以使用上下文管理器
 
 
 # 修改数据
